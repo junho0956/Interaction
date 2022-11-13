@@ -12,17 +12,25 @@
         messageD: document.querySelector('#scroll-section-0 .main-message.d'),
       },
       values: {
-        messageA_opacity_in: [0, 1, {start:0.1, end:0.2}],
-        messageA_translate_in: [20, 0, {start:0.1, end:0.2}],
-        messageA_opacity_out: [1, 0, {start:0.25, end:0.3}],
-        messageA_translate_out: [0, -20, {start:0.25, end:0.3}],
+        messageA_opacity_in: [0, 1, {start:0.1, end:0.19}],
+        messageA_opacity_out: [1, 0, {start:0.21, end:0.29}],
+        messageA_translate_in: [20, 0, {start:0.1, end:0.19}],
+        messageA_translate_out: [0, -20, {start:0.21, end:0.29}],
 
-        messageB_opacity_in: [0, 1, {start:0.3, end:0.4}],
-        messageB_translate_in: [20, 0, {start:0.3, end:0.4}],
-        messageB_opacity_out: [1, 0, {start:0.4, end:0.5}],
+        messageB_opacity_in: [0, 1, {start:0.31, end:0.39}],
+        messageB_opacity_out: [1, 0, {start:0.41, end:0.49}],
+        messageB_translate_in: [20, 0, {start:0.31, end:0.39}],
+        messageB_translate_out: [0, -20, {start:0.41, end:0.49}],
         
-        messageC_opacity: [0, 1, {start:0.5, end:0.6}],
-        messageD_opacity: [0, 1, {start:0.7, end:0.8}],
+        messageC_opacity_in: [0, 1, {start:0.5, end:0.59}],
+        messageC_opacity_out: [1, 0, {start:0.59, end:0.7}],
+        messageC_translate_in: [20, 0, {start:0.5, end:0.59}],
+        messageC_translate_out: [0, -20, {start:0.59, end:0.7}],
+
+        messageD_opacity_in: [0, 1, {start:0.7, end:0.79}],
+        messageD_opacity_out: [1, 0, {start:0.79, end:0.9}],
+        messageD_translate_in: [20, 0, {start:0.7, end:0.79}],
+        messageD_translate_out: [0, -20, {start:0.79, end:0.9}],
       }
     },
     {
@@ -142,13 +150,54 @@
         let messageA_translate_in = calcValues(values.messageA_translate_in, currentYOffset);
         let messageA_translate_out = calcValues(values.messageA_translate_out, currentYOffset);
 
-        if (scrollRatio <= 0.22) {
+        let messageB_opacity_in = calcValues(values.messageB_opacity_in, currentYOffset);
+        let messageB_opacity_out = calcValues(values.messageB_opacity_out, currentYOffset);
+        let messageB_translate_in = calcValues(values.messageB_translate_in, currentYOffset);
+        let messageB_translate_out = calcValues(values.messageB_translate_out, currentYOffset);
+
+        let messageC_opacity_in = calcValues(values.messageC_opacity_in, currentYOffset);
+        let messageC_opacity_out = calcValues(values.messageC_opacity_out, currentYOffset);
+        let messageC_translate_in = calcValues(values.messageC_translate_in, currentYOffset);
+        let messageC_translate_out = calcValues(values.messageC_translate_out, currentYOffset);
+
+        let messageD_opacity_in = calcValues(values.messageD_opacity_in, currentYOffset);
+        let messageD_opacity_out = calcValues(values.messageD_opacity_out, currentYOffset);
+        let messageD_translate_in = calcValues(values.messageD_translate_in, currentYOffset);
+        let messageD_translate_out = calcValues(values.messageD_translate_out, currentYOffset);
+
+        if (scrollRatio < 0.2) {
           objs.messageA.style.opacity = messageA_opacity_in;
           objs.messageA.style.transform = `translateY(${-50 + messageA_translate_in}%)`;
-        } else {
+        } 
+        else if (scrollRatio > 0.2 && scrollRatio < 0.3) {
           objs.messageA.style.opacity = messageA_opacity_out;
           objs.messageA.style.transform = `translateY(${-50 + messageA_translate_out}%)`;
         }
+        else if (scrollRatio > 0.3 && scrollRatio < 0.4) {
+          objs.messageB.style.opacity = messageB_opacity_in;
+          objs.messageB.style.transform = `translateY(${-50 + messageB_translate_in}%)`;
+        }
+        else if (scrollRatio > 0.4 && scrollRatio < 0.5) {
+          objs.messageB.style.opacity = messageB_opacity_out;
+          objs.messageB.style.transform = `translateY(${-50 + messageB_translate_out}%)`;
+        }
+        else if (scrollRatio > 0.5 && scrollRatio < 0.6) {
+          objs.messageC.style.opacity = messageC_opacity_in;
+          objs.messageC.style.transform = `translateY(${-50 + messageC_translate_in}%)`;
+        }
+        else if (scrollRatio > 0.6 && scrollRatio < 0.7) {
+          objs.messageC.style.opacity = messageC_opacity_out;
+          objs.messageC.style.transform = `translateY(${-50 + messageC_translate_out}%)`;
+        }
+        else if (scrollRatio > 0.7 && scrollRatio < 0.8) {
+          objs.messageD.style.opacity = messageD_opacity_in;
+          objs.messageD.style.transform = `translateY(${-50 + messageD_translate_in}%)`;
+        }
+        else if (scrollRatio > 0.8 && scrollRatio < 0.9) {
+          objs.messageD.style.opacity = messageD_opacity_out;
+          objs.messageD.style.transform = `translateY(${-50 + messageD_translate_out}%)`;
+        }
+
         // TODO: 나머지 요소들 적용해주기
         break;
       case 1:
