@@ -149,6 +149,7 @@
           objs.messageA.style.opacity = messageA_opacity_out;
           objs.messageA.style.transform = `translateY(${-50 + messageA_translate_out}%)`;
         }
+        // TODO: 나머지 요소들 적용해주기
         break;
       case 1:
         break;
