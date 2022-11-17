@@ -20,22 +20,24 @@ a {
 }
 
 .global-nav {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   height: 44px;
   padding: 0 1rem;
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
 .local-nav {
-  position: absolute;
-  top: 45px;
+  position: fixed;
+  top: 44px;
   left: 0;
   right: 0;
   height: 52px;
   border-bottom: 1px solid #ddd;
   padding: 0 1rem;
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
 .global-nav-links,
@@ -69,6 +71,18 @@ a {
 #scroll-section-0 h1{
   font-size: 4rem;
   text-align: center;
+}
+
+#scroll-section-0 canvas {
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  width: 100vw;
+  height: 100vh;
 }
 
 .main-message {
@@ -123,6 +137,15 @@ a {
   background: rgb(29, 29, 31);
 }
 
+#scroll-section-2 .b {
+  top: 10%;
+  left: 40%;
+}
+#scroll-section-2 .c {
+  top: 15%;
+  left: 45%;
+}
+
 .mid-message {
   max-width: 1000px;
   margin: 0 auto;
@@ -166,6 +189,10 @@ a {
   display: block;
 }
 
+#show-scene-0 #scroll-section-0 canvas {
+  display: block;
+}
+
 @media (min-width:1024px) {
   #scroll-section-0 h1 {
     font-size: 9vw;
@@ -187,6 +214,13 @@ a {
   }
   .desc-message {
     width: 20%;
+  }
+  #scroll-section-2 .b {
+    top: 20%;
+    left: 53%;
+  }
+  #scroll-section-2 .c {
+    left: 55%;
   }
   .mid-message {
     font-size: 4vw;
