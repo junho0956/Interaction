@@ -26,7 +26,8 @@ a {
   right: 0;
   height: 44px;
   padding: 0 1rem;
-  background-color: rgba(255, 255, 255, 0.9);
+  /* background-color: rgba(255, 255, 255, 0.9); */
+  z-index: 10;
 }
 
 .local-nav {
@@ -37,7 +38,8 @@ a {
   height: 52px;
   border-bottom: 1px solid #ddd;
   padding: 0 1rem;
-  background-color: rgba(255, 255, 255, 0.9);
+  /* background-color: rgba(255, 255, 255, 0.9); */
+  z-index: 11;
 }
 
 .global-nav-links,
@@ -66,24 +68,13 @@ a {
 
 .scroll-section {
   padding-top: 50vh;
-  border: 3px solid red;
 }
 
 #scroll-section-0 h1{
   font-size: 4rem;
   text-align: center;
-}
-
-#scroll-section-0 canvas {
-  position: fixed;
-  z-index: -1;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: none;
-  width: 100vw;
-  height: 100vh;
+  position: relative;
+  z-index: 5;
 }
 
 .main-message {
@@ -192,6 +183,27 @@ a {
 
 #show-scene-0 #scroll-section-0 canvas {
   display: block;
+}
+
+.sticky-elem-canvas {
+  top: 0;
+  height: 100%;
+}
+
+.sticky-elem-canvas canvas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.image-blend-canvas {
+  
+}
+
+#scroll-section-3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 @media (min-width:1024px) {
