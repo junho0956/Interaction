@@ -85,6 +85,7 @@ a {
   font-size: 2.5rem;
   opacity: 0;
   top: 50%;
+  will-change: opacity, tranform;
 }
 
 .main-message p {
@@ -181,7 +182,8 @@ a {
   display: block;
 }
 
-#show-scene-0 #scroll-section-0 canvas {
+#show-scene-0 #scroll-section-0 canvas,
+#show-scene-2 #scroll-section-2 canvas {
   display: block;
 }
 
@@ -192,12 +194,8 @@ a {
 
 .sticky-elem-canvas canvas {
   position: absolute;
-  top: 50%;
-  left: 50%;
-}
-
-.image-blend-canvas {
-  
+  /* top: 50%;
+  left: 50%; */
 }
 
 #scroll-section-3 {

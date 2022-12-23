@@ -104,15 +104,15 @@
 
   const calRatioValue = (scrollRatio, options) => {
     const { start:svalue, end:evalue } = options[2];
-    const [start, end] = [...options];
+    const [startRatio, endRatio] = [...options];
 
-    // start ~ end 구간에서 현재 scrollRatio 값에 따른 opacity값 구하기
+    // startRatio ~ endRatio 구간에서 현재 scrollRatio 값에 따른 opacity값 구하기
     let result = 0;
     let ratio = 0;
-    if (scrollRatio < start) result = svalue;
-    else if (scrollRatio > end) result = evalue;
+    if (scrollRatio < startRatio) result = svalue;
+    else if (scrollRatio > endRatio) result = evalue;
     else {
-      ratio = (scrollRatio - start) / (end - start);
+      ratio = (scrollRatio - startRatio) / (endRatio - startRatio);
       result = (evalue - svalue) * ratio + svalue;
     }
 
@@ -129,7 +129,6 @@
     } else {
       sections[0].contents.mainMessage1.style.opacity = `${calRatioValue(scrollRatio, sections[0].options.mainMessage1ToggleOff)}`;
       sections[0].contents.mainMessage1.style.transform = `translateY(${-50 + calRatioValue(scrollRatio, sections[0].options.mainMessage1TranslateOff)}%)`;
-
     }
 
     if (scrollRatio < 0.42) {
