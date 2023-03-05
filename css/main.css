@@ -83,7 +83,7 @@ a {
   justify-content: center;
   height: 3em;
   font-size: 2.5rem;
-  opacity: 0;
+  opacity: 0; /* initial opacity */
   top: 50%;
   will-change: opacity, tranform;
 }
@@ -122,6 +122,7 @@ a {
 .desc-message {
   font-weight: bold;
   width: 50%;
+  opacity: 0;
 }
 
 .pin {
@@ -194,8 +195,8 @@ a {
 
 .sticky-elem-canvas canvas {
   position: absolute;
-  /* top: 50%;
-  left: 50%; */
+  top: 50%;
+  left: 50%;
 }
 
 #scroll-section-3 {
